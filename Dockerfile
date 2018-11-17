@@ -6,7 +6,7 @@ RUN yum makecache && \
     yum install --nogpgcheck -y $JAVA_VERSION gcc gcc-c++ \
     yum clean all
 
-ENV CONFLUENT_VERSION 5.0.0
+ENV CONFLUENT_VERSION 5.0.1
 ENV CONFLUENT_SCALA_VERSION 2.11
 
 ADD http://packages.confluent.io/archive/5.0/confluent-oss-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz /opt
