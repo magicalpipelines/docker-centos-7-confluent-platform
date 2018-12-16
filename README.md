@@ -1,4 +1,7 @@
+![Docker Pulls](https://img.shields.io/docker/pulls/magicalpipelines/centos-7-confluent-platform.svg)
+![Docker Automated](https://img.shields.io/docker/automated/magicalpipelines/centos-7-confluent-platform.svg)
 ![Docker Build](https://img.shields.io/docker/build/magicalpipelines/centos-7-confluent-platform.svg)
+
 
 # Confluent Platform Docker Image for CentOS 7
 
