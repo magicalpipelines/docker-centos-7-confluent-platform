@@ -1,3 +1,5 @@
+![Docker Build](https://img.shields.io/docker/build/magicalpipelines/centos-7-confluent-platform.svg)
+
 # Confluent Platform Docker Image for CentOS 7
 
 This Docker image contains the open source Confluent Platform. It runs on CentOS 7.
