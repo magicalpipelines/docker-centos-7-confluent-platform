@@ -6,16 +6,16 @@ RUN yum makecache && \
     yum install --nogpgcheck -y $JAVA_VERSION gcc gcc-c++ \
     yum clean all
 
-ENV CONFLUENT_VERSION 5.2.0
+ENV CONFLUENT_VERSION 5.3.0
 ENV CONFLUENT_SCALA_VERSION 2.11
 
-ADD http://packages.confluent.io/archive/5.2/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz /opt
+ADD http://packages.confluent.io/archive/5.3/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz /opt
 RUN tar xf /opt/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz -C /opt/ && rm /opt/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz
 
 ENV PATH="/opt/confluent-$CONFLUENT_VERSION/bin/:${PATH}"
 
-# Confluent requires curl, and it can't verify that curl is installed without which
-RUN yum -y install which
+# install the confluent CLI
+RUN curl -L https://cnfl.io/cli | sh -s -- -b /usr/local/bin/
 
 # Set permissions correctly
 RUN chown 1000:1000 /opt/confluent-$CONFLUENT_VERSION/share/java/kafka/connect-*
